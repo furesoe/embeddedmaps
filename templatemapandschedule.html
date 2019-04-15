@@ -10,7 +10,7 @@
 <div>
     <div style="position:relative" id="map" background-color: "white" height: "600px"></div>
     <div>
-        <table id="table" height: "200px" data-show-toggle="true" data-show-export="true" data-show-columns="true"
+        <table id="table" data-show-toggle="true" data-show-export="true" data-show-columns="true"
                data-filter-control="true"></table>
     </div>
 </div>
@@ -116,7 +116,7 @@
                 cm: cm, // Column model
                 autoUpdate: false, // Skal kortet opdateres ved zoom?
                 height: null, // Skal vÃ¦re null, hvis filter funktioner bruges pga. bug i bootstrap-table
-                tableBodyHeight: 200, // Hack til at afhjÃ¦lpe ovenstÃ¥ende
+                tableBodyHeight: 100, // Hack til at afhjÃ¦lpe ovenstÃ¥ende
                 setViewOnSelect: true, // Zoom nÃ¥r det vÃ¦lges i tabellen
                 openPopUp: true, // Vis pop up pÃ¥ valgte features
                 setSelectedStyle: true, // Skal valgte features have en Selected style?
