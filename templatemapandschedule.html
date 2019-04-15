@@ -2,15 +2,15 @@
 <html>
 <head>
 <script src="https://furesoe.mapcentia.com/apps/widgets/gc2map/js/gc2map.js"></script>
-<script src="https://furesoe.mapcentia.com/apps/widgets/gc2map/js/gc2table.js"></script>
+<script src="https://furesoe.mapcentia.com/apps/widgets/gc2table/js/gc2table.js"></script>
 <script src="https://furesoe.mapcentia.com/apps/widgets/gc2map/js/searchModules/danish.js"></script>
 </head>
 <body>
 <!-- div til kort og liste -->
 <div>
-    <div style="position:relative" id="map" background-color: "white" height: "400px"></div>
+    <div style="position:relative" id="map" background-color: "white"></div>
     <div>
-        <table id="table" table-height= "200px" data-show-toggle="true" data-show-export="true" data-show-columns="true"
+        <table id="table" data-show-toggle="true" data-show-export="true" data-show-columns="true"
                data-filter-control="true"></table>
     </div>
 </div>
@@ -24,17 +24,14 @@
         baseLayers: [{id: "geodkBright", "name": "Landkort"}],
         setBaseLayer: 'geodkBright',
         width: '100%',
-        height: '400px',
+        height: '600px',
         callBack: function (m, w) {
-
             // Aktiver sÃ¸gning med kommune nr.
             gc2map.createSearch(m, "190");
-
             // Lav et SQL store pÃ¥ normal vis
             var store = new geocloud.sqlStore({
                 db: "furesoe",
                 sql: "SELECT gid,anvgen,anvendelsegenerel,plannr,plannavn,doklink,the_geom FROM _01_fysisk_plan_og_naturbeskyt.lokalplan_vedtaget order by plannr",
-
                 // StyleMap laves som en funktion
                 styleMap: function (feature) {
                     return {
@@ -62,13 +59,10 @@
                     m.zoomToExtentOfgeoJsonStore(store);
                 }
             });
-
             // TilfÃ¸j store til kort og load
             m.addGeoJsonStore(store);
             store.load();
-
             // Indtil nu er det normal widget. Nu begynder tabel
-
             // Definer en column model
             var cm = [
                 {
@@ -85,7 +79,6 @@
                     "showInPopup": false,
                     filterControl: "input",
                     sortable: true
-
                 },
                 {
                     "header": "Anvendelse",
@@ -106,9 +99,7 @@
                     "showInPopup": true
                 }
             ];
-
             // Start tabel widget
-
             gc2table.init({
                 el: "#table", // Element som tabellen skal lave i
                 geocloud2: m, // geocloud object
@@ -116,7 +107,7 @@
                 cm: cm, // Column model
                 autoUpdate: false, // Skal kortet opdateres ved zoom?
                 height: null, // Skal vÃ¦re null, hvis filter funktioner bruges pga. bug i bootstrap-table
-                tableBodyHeight: 400, // Hack til at afhjÃ¦lpe ovenstÃ¥ende
+                tableBodyHeight: 600, // Hack til at afhjÃ¦lpe ovenstÃ¥ende
                 setViewOnSelect: true, // Zoom nÃ¥r det vÃ¦lges i tabellen
                 openPopUp: true, // Vis pop up pÃ¥ valgte features
                 setSelectedStyle: true, // Skal valgte features have en Selected style?
@@ -124,7 +115,6 @@
             });
         }
     });
-
 </script>
 </body>
 </html>
