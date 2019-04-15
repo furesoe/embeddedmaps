@@ -95,7 +95,7 @@ var gc2table = (function () {
         var defaults = {
                 el: "#table",
                 autoUpdate: false,
-                height: 100,
+                height: 400,
                 setSelectedStyle: true,
                 openPopUp: false,
                 setViewOnSelect: true,
