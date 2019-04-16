@@ -31,7 +31,7 @@
             // Lav et SQL store pÃ¥ normal vis
             var store = new geocloud.sqlStore({
                 db: "furesoe",
-                sql:    "SELECT gid,plannr,plannavn,anvendelsegenerel,'Vedtaget' as planstatus,doklink,to_date(datostart::text,'YYYYMMDD') AS datostart,to_date(datoslut::text,'YYYYMMDD') AS datoslut,to_date(datoikraft::text,'YYYYMMDD') AS datoikraft,to_date(datoaflyst::text,'YYYYMMDD') AS datoaflyst,the_geom from _01_fysisk_plan_og_naturbeskyt.lokalplan_vedtaget UNION  SELECT gid,plannr,plannavn,anvendelsegenerel,'Forslag' as planstatus,doklink,to_date(datostart::text,'YYYYMMDD') AS datostart,to_date(datoslut::text,'YYYYMMDD') AS datoslut,to_date(datoikraft::text,'YYYYMMDD') AS datoikraft,to_date(datoaflyst::text,'YYYYMMDD') AS datoaflyst,the_geom from _01_fysisk_plan_og_naturbeskyt.lokalplan_forslag UNION SELECT gid,plannr,plannavn,anvendelsegenerel,'Aflyst' as planstatus,doklink,to_date(datostart::text,'YYYYMMDD') AS datostart,to_date(datoslut::text,'YYYYMMDD') AS datoslut,to_date(datoikraft::text,'YYYYMMDD') AS datoikraft,to_date(datoaflyst::text,'YYYYMMDD') AS datoaflyst,the_geom from _01_fysisk_plan_og_naturbeskyt.lokalplan_aflyst",
+                sql:    "SELECT gid,plannr,anvgen,plannavn,anvendelsegenerel,'Vedtaget' as planstatus,doklink,to_date(datostart::text,'YYYYMMDD') AS datostart,to_date(datoslut::text,'YYYYMMDD') AS datoslut,to_date(datoikraft::text,'YYYYMMDD') AS datoikraft,to_date(datoaflyst::text,'YYYYMMDD') AS datoaflyst,the_geom from _01_fysisk_plan_og_naturbeskyt.lokalplan_vedtaget UNION  SELECT gid,plannr,plannavn,anvgen,anvendelsegenerel,'Forslag' as planstatus,doklink,to_date(datostart::text,'YYYYMMDD') AS datostart,to_date(datoslut::text,'YYYYMMDD') AS datoslut,to_date(datoikraft::text,'YYYYMMDD') AS datoikraft,to_date(datoaflyst::text,'YYYYMMDD') AS datoaflyst,the_geom from _01_fysisk_plan_og_naturbeskyt.lokalplan_forslag UNION SELECT gid,plannr,anvgen,plannavn,anvendelsegenerel,'Aflyst' as planstatus,doklink,to_date(datostart::text,'YYYYMMDD') AS datostart,to_date(datoslut::text,'YYYYMMDD') AS datoslut,to_date(datoikraft::text,'YYYYMMDD') AS datoikraft,to_date(datoaflyst::text,'YYYYMMDD') AS datoaflyst,the_geom from _01_fysisk_plan_og_naturbeskyt.lokalplan_aflyst",
                 // StyleMap laves som en funktion
                 styleMap: function (feature) {
                     return {
@@ -47,7 +47,7 @@
                                                             d === 91 ? '#9c9e9c' :
                                                                 d === 96 ? '#C0C0C0' :
                                                                     '#FFEDA0'
-                        }(feature.anvgen)),
+                        }(feature.properties.anvgen)),
                         weight: 1,
                         opacity: 1,
                         color: "#000",
