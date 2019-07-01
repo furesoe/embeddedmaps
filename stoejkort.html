@@ -61,36 +61,19 @@
             // Definer en column model
             var cm = [
                 {
-                    "header": "Plannr",
-                    "dataIndex": "plannr",
+                    "header": "min. dB",
+                    "dataIndex": "isov1",
                     "type": "varchar",
-                    filterControl: "input",
-                    sortable: true
+                    "filterControl": "input",
+                    "sortable": true
+                    "showInPopup": true
                 },
                 {
-                    "header": "Plannavn",
-                    "dataIndex": "plannavn",
+                   "header": "max. dB",
+                    "dataIndex": "isov2",
                     "type": "varchar",
-                    "showInPopup": true,
-                    filterControl: "input",
-                    sortable: true
-                },
-                {
-                    "header": "Anvendelse",
-                    "dataIndex": "anvendelsegenerel",
-                    "showInPopup": false,
-                    filterControl: "select"
-                },
-                {
-                    "header": "Status",
-                    "dataIndex": "planstatus",
-                    "showInPopup": true,
-                    filterControl: "select",
-                },
-                {
-                    "header": "Link",
-                    "dataIndex": "doklink",
-                    "link": "<span style='white-space: nowrap'>Hent lokalplan</span>",
+                    "filterControl": "input",
+                    "sortable": true
                     "showInPopup": true
                 }
             ];
