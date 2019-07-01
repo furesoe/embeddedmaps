@@ -31,7 +31,7 @@
             // Lav et SQL store pÃ¥ normal vis
             var store = new geocloud.sqlStore({
                 db: "furesoe",
-                sql:    "SELECT * from 	_09_miljoebeskyttelse.vejstoej,
+                sql:    "SELECT * from _09_miljoebeskyttelse.vejstoej",
                 // StyleMap laves som en funktion
                 styleMap: function (feature) {
                     return {
@@ -71,7 +71,7 @@
                 {
                    "header": "max. dB",
                     "dataIndex": "isov2",
-                    "type": "varchar",
+                    "type": "decimal (3 10)",
                     "filterControl": "input",
                     "sortable": true
                     "showInPopup": true
