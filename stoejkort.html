@@ -32,12 +32,12 @@
                 styleMap: function (feature) {
                     return {
                         fillColor: (function (d) {
-                            return d === 58 ? '#e7e364' :
-                              d === 0 ? '#fff' :  
-                                d === 63 ? '#c66216' :
-                                    d === 68 ? '#c13519' :
-                                        d === 73 ? '#784ba8' :
-                                            d === 78 ? '#0622be' :
+                            return d === '58' ? '#e7e364' :
+                              d === '0' ? '#fff' :  
+                                d === '63' ? '#c66216' :
+                                    d === '68' ? '#c13519' :
+                                        d === '73' ? '#784ba8' :
+                                            d === '78' ? '#0622be' :
                                               '#FFEDA0'
                         }(feature.properties.isov1)),
                         weight: 1,
