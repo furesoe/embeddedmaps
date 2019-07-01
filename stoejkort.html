@@ -33,6 +33,7 @@
                     return {
                         fillColor: (function (d) {
                             return d === '58' ? '#e7e364' :
+                              d === '0' ? 'fillOpacity: 0' :  
                                 d === '63' ? '#c66216' :
                                     d === '68' ? '#c13519' :
                                         d === '73' ? '#784ba8' :
@@ -42,7 +43,7 @@
                         weight: 1,
                         opacity: 1,
                         color: "#000",
-                        fillOpacity: 0.25
+                        fillOpacity: 0.75
                     }
                 },
                 onLoad: function () {
