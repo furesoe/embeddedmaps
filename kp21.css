@@ -1610,3 +1610,10 @@ td.rdtYear:hover {
 .info-icon {
   cursor: help;
 }
+
+.leaflet-bar-part leaflet-bar-part-single {
+  display:none;
+}
+.history-control leaflet-bar leaflet-control {   
+  display:none;
+}
