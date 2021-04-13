@@ -2,13 +2,14 @@
  * @author     Tommy Hagstrøm, Furesø Kommune
  */
 
-
 div.leaflet-bar-part .leaflet-bar-part-single {
-  display:none;
+  display: none;
 }
-div.history-control .leaflet-bar .leaflet-control {   
-  display:none;
+
+div.history-control .leaflet-bar .leaflet-control {
+  display: none;
 }
+
 div.dot {
-  color:#02718F
+  color: #02718F
 }
