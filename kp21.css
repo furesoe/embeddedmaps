@@ -3,15 +3,12 @@
  */
 
 
-.leaflet-bar-part .leaflet-bar-part-single {
+div.leaflet-bar-part .leaflet-bar-part-single {
   display:none;
 }
-.history-control .leaflet-bar .leaflet-control {   
+div.history-control .leaflet-bar .leaflet-control {   
   display:none;
 }
-#dot {
+div.dot {
   color:#02718F
-}
-div.leaflet-control-attribution leaflet-control {
-  display:none;
 }
