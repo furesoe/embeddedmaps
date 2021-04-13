@@ -3,9 +3,9 @@
  */
 
 
-.leaflet-bar-part leaflet-bar-part-single {
+#leaflet-bar-part leaflet-bar-part-single {
   display:none;
 }
-.history-control leaflet-bar leaflet-control {   
+#history-control leaflet-bar leaflet-control {   
   display:none;
 }
