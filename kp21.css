@@ -1,4 +1,8 @@
-leaflet-bar-part leaflet-bar-part-single 
+.leaflet-bar-part leaflet-bar-part-single 
 {
-  display:none;
+  display:hidden;
+}
+
+.navbar {
+ background-color:#fff; 
 }
